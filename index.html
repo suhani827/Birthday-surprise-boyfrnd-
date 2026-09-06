@@ -3,296 +3,748 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Cutiee 💗</title>
+
+<title>For My Cutiee 💗</title>
 
 <style>
-* {
-  box-sizing: border-box;
+
+*{
+    box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg, #ffe6ef, #fff5f8, #ffd6e5);
-  color: #5a2639;
-  text-align: center;
-  overflow-x: hidden;
+html{
+    scroll-behavior:smooth;
 }
 
-.page {
-  min-height: 100vh;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+body{
+    margin:0;
+    font-family:Georgia,serif;
+    background:linear-gradient(135deg,#ffd6e5,#fff0f6,#ffe1ec);
+    color:#64283e;
+    text-align:center;
+    overflow-x:hidden;
 }
 
-h1 {
-  font-size: 45px;
-  margin: 15px;
+/* ---------- INTRO ---------- */
+
+.intro{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    position:relative;
 }
 
-h2 {
-  font-size: 32px;
+.intro h1{
+    font-size:48px;
+    animation:fadeDown 2s ease;
 }
 
-p {
-  font-size: 19px;
-  line-height: 1.8;
-  max-width: 650px;
+.intro p{
+    font-size:20px;
+    animation:fadeUp 2s ease;
 }
 
-.heart {
-  font-size: 65px;
-  animation: beat 1.2s infinite;
+.bigheart{
+    font-size:80px;
+    animation:heartbeat 1.4s infinite;
 }
 
-button {
-  border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  background: #e75480;
-  color: white;
-  font-size: 18px;
-  margin-top: 25px;
-  box-shadow: 0 5px 15px #d98ba4;
+.startbtn{
+    margin-top:25px;
+    padding:16px 35px;
+    border:none;
+    border-radius:40px;
+    background:#e75480;
+    color:white;
+    font-size:18px;
+    box-shadow:0 8px 25px #d79aaa;
+    cursor:pointer;
+    animation:fadeUp 2.5s ease;
 }
 
-.card {
-  background: rgba(255,255,255,0.78);
-  padding: 30px;
-  border-radius: 25px;
-  max-width: 700px;
-  box-shadow: 0 10px 30px rgba(150,70,100,0.15);
-  margin: 20px auto;
+.startbtn:hover{
+    transform:scale(1.08);
 }
 
-.memory {
-  margin: 25px 0;
-  padding: 20px;
-  border-radius: 20px;
-  background: #fff0f5;
+/* ---------- SECTIONS ---------- */
+
+section{
+    padding:80px 20px;
+    min-height:90vh;
 }
 
-.hidden {
-  display: none;
+.hidden{
+    display:none;
 }
 
-.message-img {
-  max-width: 95%;
-  border-radius: 20px;
-  margin-top: 20px;
+h2{
+    font-size:36px;
+    margin-bottom:35px;
 }
 
-@keyframes beat {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+.card{
+    max-width:700px;
+    margin:25px auto;
+    padding:30px;
+    background:rgba(255,255,255,.78);
+    border-radius:30px;
+    box-shadow:0 10px 35px rgba(130,40,75,.15);
+    animation:cardAppear 1.2s ease;
 }
 
-@keyframes float {
-  from {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-10vh);
-    opacity: 0;
-  }
+.card p{
+    font-size:19px;
+    line-height:1.8;
 }
 
-.floating {
-  position: fixed;
-  bottom: -30px;
-  font-size: 25px;
-  animation: float 7s linear infinite;
-  pointer-events: none;
+.memory{
+    background:#fff0f5;
+    padding:22px;
+    margin:22px 0;
+    border-radius:25px;
+    transition:.3s;
 }
+
+.memory:hover{
+    transform:translateY(-7px) scale(1.02);
+}
+
+.emoji{
+    font-size:45px;
+}
+
+/* ---------- COUNTDOWN ---------- */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.timebox{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    min-width:80px;
+    box-shadow:0 6px 20px rgba(100,30,60,.15);
+}
+
+.timebox strong{
+    display:block;
+    font-size:28px;
+}
+
+.timebox span{
+    font-size:13px;
+}
+
+/* ---------- FAVORITES ---------- */
+
+.favourites{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:18px;
+}
+
+.fav{
+    background:#fff;
+    border-radius:25px;
+    padding:22px 12px;
+    box-shadow:0 7px 20px rgba(100,30,60,.12);
+    transition:.4s;
+}
+
+.fav:hover{
+    transform:translateY(-10px) rotate(1deg);
+}
+
+.fav .icon{
+    font-size:40px;
+}
+
+.fav h3{
+    margin:10px 0;
+}
+
+/* ---------- PHOTO ---------- */
+
+.photo{
+    width:90%;
+    max-width:500px;
+    border-radius:30px;
+    box-shadow:0 12px 35px rgba(90,20,50,.25);
+    animation:photoFloat 4s ease-in-out infinite;
+}
+
+/* ---------- LETTER ---------- */
+
+.letter{
+    text-align:left;
+    font-size:19px;
+    line-height:2;
+}
+
+.signature{
+    text-align:right;
+    font-size:22px;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn{
+    border:none;
+    padding:15px 30px;
+    border-radius:35px;
+    background:#e75480;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    margin-top:25px;
+    box-shadow:0 7px 20px #d79aaa;
+}
+
+/* ---------- FINAL ---------- */
+
+.final{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.final h1{
+    font-size:48px;
+    animation:heartbeat 1.5s infinite;
+}
+
+.final p{
+    max-width:650px;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.float{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+    z-index:10;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes cardAppear{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes photoFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<section class="page" id="home">
 
-  <div class="heart">💗</div>
+<!-- INTRO -->
 
-  <h1>Happy Birthday, Cutiee! 🎂🎀</h1>
+<div class="intro" id="intro">
 
-  <p>
-    Someone made a little surprise just for you... 🥹💕
-  </p>
+    <div class="bigheart">💗</div>
 
-  <button onclick="openSurprise()">
-    Open Your Surprise 💌
-  </button>
-
-</section>
-
-
-<section class="page hidden" id="story">
-
-  <h2>Our Little Story 💕</h2>
-
-  <div class="card">
-
-    <p><b>Two years. 🥹💗</b></p>
+    <h1>Hey Cutiee... 🎀</h1>
 
     <p>
-      And somehow, all the little moments we've shared
-      became some of my favourite memories.
+        I made a little something just for you. 🥹
     </p>
 
-    <div class="memory">
-      <h3>📞 Our Endless Talks</h3>
-      <p>
-        Talking for hours and hours continuously,
-        finding new things to talk about even when
-        we probably had nothing left to say. 😂💗
-      </p>
+    <button class="startbtn" onclick="start()">
+        Open Your Surprise 💌
+    </button>
+
+</div>
+
+
+
+<!-- MAIN WEBSITE -->
+
+<div id="main" class="hidden">
+
+
+<!-- BIRTHDAY -->
+
+<section>
+
+    <h2>🎂 Happy Birthday Cutiee 💗</h2>
+
+    <div class="card">
+
+        <p>
+            Your special day is finally here! 🥹🎀
+        </p>
+
+        <p>
+            So I made this tiny corner of the internet
+            just for you.
+        </p>
+
+        <div class="countdown">
+
+            <div class="timebox">
+                <strong id="days">00</strong>
+                <span>Days</span>
+            </div>
+
+            <div class="timebox">
+                <strong id="hours">00</strong>
+                <span>Hours</span>
+            </div>
+
+            <div class="timebox">
+                <strong id="minutes">00</strong>
+                <span>Minutes</span>
+            </div>
+
+            <div class="timebox">
+                <strong id="seconds">00</strong>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+        <p>
+            🎀 25 September 🎀
+        </p>
+
     </div>
 
-    <div class="memory">
-      <h3>🌙 Our Video Calls</h3>
-      <p>
-        Sleeping on video calls and simply being there
-        with each other... one of those little things
-        that became such a special memory. 🥹💕
-      </p>
+</section>
+
+
+
+<!-- OUR STORY -->
+
+<section>
+
+    <h2>💕 Our Little Story</h2>
+
+    <div class="card">
+
+        <p>
+            <b>2 years of us. 🥹💗</b>
+        </p>
+
+        <div class="memory">
+
+            <div class="emoji">📞</div>
+
+            <h3>Endless Talks</h3>
+
+            <p>
+                Talking for long hours continuously,
+                somehow always finding something else
+                to talk about. 😂💗
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <div class="emoji">🌙</div>
+
+            <h3>Video Calls</h3>
+
+            <p>
+                Sleeping on video calls and just
+                knowing that the other person was there. 🥹💕
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <div class="emoji">🚌</div>
+
+            <h3>The First Time We Met</h3>
+
+            <p>
+                The first time we met was when we were
+                both going home and travelled together
+                on the same bus.
+            </p>
+
+            <p>
+                Who knew that one simple bus journey
+                would become the beginning of so many
+                beautiful memories? ✨
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="memory">
-      <h3>🚌 The First Time We Met</h3>
-      <p>
-        I still remember the first time we met —
-        when we were both going home and travelled
-        together on the same bus. 🥹💗
-      </p>
+</section>
 
-      <p>
-        I never knew that one simple bus journey
-        would become the beginning of so many
-        beautiful memories together. ✨
-      </p>
+
+
+<!-- FAVOURITES -->
+
+<section>
+
+    <h2>🎀 Your Favourite Things</h2>
+
+    <div class="card">
+
+        <div class="favourites">
+
+            <div class="fav">
+
+                <div class="icon">🏏</div>
+
+                <h3>Sport</h3>
+
+                <p>Cricket</p>
+
+            </div>
+
+
+            <div class="fav">
+
+                <div class="icon">❤️</div>
+
+                <h3>Team</h3>
+
+                <p>RCB</p>
+
+            </div>
+
+
+            <div class="fav">
+
+                <div class="icon">😂💗</div>
+
+                <h3>Person</h3>
+
+                <p><b>Suhani</b></p>
+
+            </div>
+
+
+            <div class="fav">
+
+                <div class="icon">🍽️</div>
+
+                <h3>Food</h3>
+
+                <p>Nanhe De Kulche</p>
+
+            </div>
+
+        </div>
+
     </div>
 
-  </div>
+</section>
 
-  <button onclick="showLetter()">
-    There's More... 💌
-  </button>
+
+
+<!-- PHOTO -->
+
+<section>
+
+    <h2>📸 A Little Memory</h2>
+
+    <div class="card">
+
+        <img
+        src="IMG_20260906_124726.jpg"
+        class="photo"
+        alt="Our memory">
+
+        <p>
+            Some memories deserve their own little place. 💗
+        </p>
+
+    </div>
 
 </section>
 
 
-<section class="page hidden" id="letter">
 
-  <h2>Just For You 💗</h2>
+<!-- LETTER -->
 
-  <div class="card">
+<section>
+
+    <h2>💌 A Letter For You</h2>
+
+    <div class="card letter">
+
+        <p>
+            Happy Birthday to my Cutiee. 🎂💗
+        </p>
+
+        <p>
+            Two years... and when I think about it,
+            it's not just the big moments that I remember.
+            It's all those little things.
+        </p>
+
+        <p>
+            The endless conversations, the video calls,
+            falling asleep while talking, laughing about
+            completely random things and all the memories
+            we've collected along the way. 🥹💕
+        </p>
+
+        <p>
+            And I still smile when I remember that our
+            first meeting happened on that bus while
+            we were both going home. 🚌💗
+        </p>
+
+        <p>
+            I hope your birthday is as special as you are.
+            I hope this year gives you lots of happiness,
+            success, laughter and everything you wish for. ✨
+        </p>
+
+        <p>
+            And obviously... don't forget that your
+            favourite person made you this website. 😂💗
+        </p>
+
+        <p class="signature">
+            — Suhani 🎀
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="bigheart">💗</div>
+
+    <h1>Happy Birthday Cutiee! 🎂</h1>
 
     <p>
-      Happy Birthday to the most special person in my life. 💗🎂
+        Here's to more laughs,
+        more endless talks,
+        more video calls,
+        more memories,
+        and many more beautiful years. 🥹💗
     </p>
 
-    <p>
-      You are not just my boyfriend, but also my best friend,
-      my biggest supporter, and the person who makes my days brighter.
-    </p>
+    <button class="btn" onclick="finalSurprise()">
+        Click For One Last Surprise 🎁
+    </button>
 
-    <p>
-      Thank you for always being there for me, for making me smile,
-      and for filling my life with so many beautiful memories.
-    </p>
+    <div id="surprise" class="hidden">
 
-    <p>
-      From our endless talks to falling asleep on video calls,
-      every little moment with you means so much to me. 💕
-    </p>
+        <h2>🥹💗</h2>
 
-    <p>
-      I hope this year brings you success, happiness,
-      good health and everything you've been wishing for. ✨
-    </p>
+        <p>
+            No matter how many birthdays come and go,
+            I hope you always remember this little
+            surprise made just for you. 🎀
+        </p>
 
-    <p>
-      Happy Birthday once again, Cutiee. 🎂🎀💗
-    </p>
+        <h2>
+            You are very, very special. 💕
+        </h2>
 
-  </div>
-
-  <button onclick="showPicture()">
-    One Last Surprise 🎁
-  </button>
+    </div>
 
 </section>
 
 
-<section class="page hidden" id="picture">
+</div>
 
-  <h2>Your Birthday Message 💌</h2>
-
-  <div class="card">
-
-    <p>
-      And now... the message I really wanted you to read. 🥹💗
-    </p>
-
-    <img
-      src="birthday-message.jpg"
-      class="message-img"
-      alt="Birthday message"
-    >
-
-  </div>
-
-  <h1>Happy Birthday Cutiee! 🎂💗🎀</h1>
-
-  <p>
-    Here's to more memories, more laughs,
-    more endless conversations and many more
-    beautiful moments together. ✨
-  </p>
-
-</section>
 
 
 <script>
 
-function openSurprise() {
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("story").classList.remove("hidden");
+/* OPEN WEBSITE */
+
+function start(){
+
+    document.getElementById("intro").style.display="none";
+
+    document.getElementById("main").classList.remove("hidden");
+
+    window.scrollTo(0,0);
+
 }
 
-function showLetter() {
-  document.getElementById("story").classList.add("hidden");
-  document.getElementById("letter").classList.remove("hidden");
+
+/* FINAL SURPRISE */
+
+function finalSurprise(){
+
+    document.getElementById("surprise").classList.remove("hidden");
+
 }
 
-function showPicture() {
-  document.getElementById("letter").classList.add("hidden");
-  document.getElementById("picture").classList.remove("hidden");
+
+/* COUNTDOWN TO 25 SEPTEMBER */
+
+function countdown(){
+
+    const now = new Date();
+
+    let year = now.getFullYear();
+
+    let birthday = new Date(year,8,25,0,0,0);
+
+    if(now > birthday){
+
+        birthday = new Date(year+1,8,25,0,0,0);
+
+    }
+
+    const difference = birthday-now;
+
+    const days = Math.floor(difference/(1000*60*60*24));
+
+    const hours = Math.floor(
+        (difference/(1000*60*60))%24
+    );
+
+    const minutes = Math.floor(
+        (difference/(1000*60))%60
+    );
+
+    const seconds = Math.floor(
+        (difference/1000)%60
+    );
+
+    document.getElementById("days").innerText =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2,"0");
+
 }
 
-setInterval(function() {
+setInterval(countdown,1000);
 
-  const heart = document.createElement("div");
+countdown();
 
-  heart.className = "floating";
 
-  heart.innerHTML =
-    ["💗","💕","🎀","🌸","✨"][Math.floor(Math.random()*5)];
 
-  heart.style.left = Math.random() * 100 + "vw";
+/* FLOATING HEARTS */
 
-  heart.style.animationDuration =
-    (5 + Math.random()*5) + "s";
+setInterval(function(){
 
-  document.body.appendChild(heart);
+    const heart=document.createElement("div");
 
-  setTimeout(() => heart.remove(), 10000);
+    heart.className="float";
 
-}, 800);
+    const symbols=[
+        "💗",
+        "💕",
+        "💖",
+        "🎀",
+        "🌸",
+        "✨"
+    ];
+
+    heart.innerText =
+        symbols[Math.floor(Math.random()*symbols.length)];
+
+    heart.style.left =
+        Math.random()*100+"vw";
+
+    heart.style.fontSize =
+        (18+Math.random()*25)+"px";
+
+    heart.style.animationDuration =
+        (5+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+
+        heart.remove();
+
+    },10000);
+
+},700);
 
 </script>
 
